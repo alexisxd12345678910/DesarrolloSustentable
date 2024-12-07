@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .donation-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="donation-container">
+        <h2>Donar</h2>
+        <label for="amount">Selecciona el monto:</label>
+        <select id="amount">
+            <option value="">Selecciona...</option>
+            <option value="50">50 pesos</option>
+            <option value="100">100 pesos</option>
+            <option value="200">200 pesos</option>
+            <option value="300">300 pesos</option>
+            <option value="1000">1000 pesos</option>
+        </select>
+
+        <label for="custom-amount">O ingresa tu propio monto:</label>
+        <input type="number" id="custom-amount" placeholder="Ingresa la cantidad" min="1">
+
+        <label for="card">Selecciona una tarjeta:</label>
+        <select id="card">
+            <option value="">Selecciona una tarjeta...</option>
+            <option value="BBVA: 5701-8441-7009-1234">BBVA: 5701-8441-7009-1234</option>
+            <option value="Santander: 4580-5091-1143-5678">Santander: 4580-5091-1143-5678</option>
+            <option value="2325-8102-6701-9101">HSBC: 2325-8102-6701-9101</option>
+        </select>
+
+        <button id="donate-btn">Donar</button>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById("donate-btn").addEventListener("click", function() {
+            const selectedAmount = document.getElementById("amount").value;
+            const customAmount = document.getElementById("custom-amount").value;
+            const card = document.getElementById("card").value;
+            const messageDiv = document.getElementById("message");
+
+            let amount;
+
+            if (customAmount) {
+                amount = parseFloat(customAmount);
+                if (isNaN(amount) || amount <= 0) {
+                    messageDiv.textContent = "Por favor, ingresa un monto válido.";
+                    messageDiv.style.color = "red";
+                    return;
+                }
+            } else if (selectedAmount) {
+                amount = parseFloat(selectedAmount);
+            } else {
+                messageDiv.textContent = "Por favor, selecciona un monto o ingresa uno.";
+                messageDiv.style.color = "red";
+                return;
+            }
+
+            if (!card) {
+                messageDiv.textContent = "Por favor, selecciona una tarjeta.";
+                messageDiv.style.color = "red";
+                return;
+            }
+
+            messageDiv.textContent = `¡Gracias por tu donación de ${amount} pesos usando la tarjeta terminada en ${card.slice(-4)}!`;
+            messageDiv.style.color = "green";
+        });
+    </script>
+</body>
+</html>

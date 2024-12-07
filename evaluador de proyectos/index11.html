@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluador de Proyectos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, textarea, select, button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+        button {
+            color: #fff;
+            background-color: #007BFF;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #otherSectorField {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evaluador de Proyectos</h1>
+        <form id="projectForm">
+            <label for="projectName">Nombre del Proyecto:</label>
+            <input type="text" id="projectName" name="projectName" placeholder="Ej. Planta Solar Sustentable" required>
+
+            <label for="sector">Sector o Industria:</label>
+            <select id="sector" name="sector" onchange="handleSectorChange()" required>
+                <option value="" disabled selected>Seleccione...</option>
+                <option value="Tecnología">Tecnología</option>
+                <option value="Salud">Salud</option>
+                <option value="Energía">Energía</option>
+                <option value="Educación">Educación</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <div id="otherSectorField">
+                <label for="otherSector">Especifique el sector:</label>
+                <input type="text" id="otherSector" name="otherSector" placeholder="Escriba el sector">
+            </div>
+
+            <label for="objective">Objetivo del Proyecto:</label>
+            <textarea id="objective" name="objective" rows="3" placeholder="Ej. Generar energía limpia y sostenible." required></textarea>
+
+            <label for="duration">Duración Estimada (meses):</label>
+            <input type="number" id="duration" name="duration" placeholder="Ej. 12" required>
+
+            <label for="location">Ubicación Geográfica:</label>
+            <input type="text" id="location" name="location" placeholder="Ej. Ciudad de México" required>
+
+            <label for="budget">Impacto Económico (Presupuesto Inicial en USD):</label>
+            <input type="number" id="budget" name="budget" placeholder="Ej. 50000" required>
+
+            <button type="button" onclick="evaluateProject()">Evaluar Proyecto</button>
+        </form>
+        <button style="display:none;" id="downloadButton" onclick="downloadPDF()">Descargar Resultados en PDF</button>
+        <div id="result" class="result" style="display: none;">
+            <h3>Resultados de la Evaluación:</h3>
+            <p id="evaluationOutput"></p>
+        </div>
+    </div>
+
+    <script>
+        function handleSectorChange() {
+            const sector = document.getElementById('sector').value;
+            const otherSectorField = document.getElementById('otherSectorField');
+            if (sector === 'Otro') {
+                otherSectorField.style.display = 'block';
+            } else {
+                otherSectorField.style.display = 'none';
+            }
+        }
+
+        function evaluateProject() {
+            const projectName = document.getElementById('projectName').value;
+            let sector = document.getElementById('sector').value;
+            const otherSector = document.getElementById('otherSector').value;
+            const objective = document.getElementById('objective').value;
+            const duration = document.getElementById('duration').value;
+            const location = document.getElementById('location').value;
+            const budget = document.getElementById('budget').value;
+
+            // Usar sector ingresado si se seleccionó "Otro"
+            if (sector === 'Otro' && otherSector) {
+                sector = otherSector;
+            }
+
+            // Mostrar resultados
+            const evaluationMessage = `
+                <strong>Nombre del Proyecto:</strong> ${projectName}<br>
+                <strong>Sector o Industria:</strong> ${sector}<br>
+                <strong>Objetivo:</strong> ${objective}<br>
+                <strong>Duración Estimada:</strong> ${duration} meses<br>
+                <strong>Ubicación Geográfica:</strong> ${location}<br>
+                <strong>Presupuesto Inicial:</strong> $${parseInt(budget).toLocaleString()} USD<br>
+            `;
+            document.getElementById('evaluationOutput').innerHTML = evaluationMessage;
+            document.getElementById('result').style.display = 'block';
+
+            // Mostrar botón para descargar PDF
+            document.getElementById('downloadButton').style.display = 'inline-block';
+        }
+
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const projectName = document.getElementById('projectName').value;
+            let sector = document.getElementById('sector').value;
+            const otherSector = document.getElementById('otherSector').value;
+            const objective = document.getElementById('objective').value;
+            const duration = document.getElementById('duration').value;
+            const location = document.getElementById('location').value;
+            const budget = document.getElementById('budget').value;
+
+            if (sector === 'Otro' && otherSector) {
+                sector = otherSector;
+            }
+
+            doc.text(`Resultados de Evaluación del Proyecto`, 10, 10);
+            doc.text(`Nombre del Proyecto: ${projectName}`, 10, 20);
+            doc.text(`Sector o Industria: ${sector}`, 10, 30);
+            doc.text(`Objetivo: ${objective}`, 10, 40);
+            doc.text(`Duración Estimada: ${duration} meses`, 10, 50);
+            doc.text(`Ubicación Geográfica: ${location}`, 10, 60);
+            doc.text(`Presupuesto Inicial: $${parseInt(budget).toLocaleString()} USD`, 10, 70);
+
+            doc.save('evaluacion_proyecto.pdf');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salvar a los Animales</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://wallpapercave.com/wp/wp9409731.jpg') no-repeat center center/cover;
+      color: white;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+      transform: scale(1.1);
+      animation: heroAnimation 3s ease-in-out infinite alternate;
+    }
+
+    .hero p {
+      font-size: 1.8rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    @keyframes heroAnimation {
+      0% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Sección general */
+    section {
+      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: -50px;
+    }
+
+    h2 {
+      color: #4CAF50;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #d9534f;
+      font-weight: bold;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+       position: relative;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card h3 {
+      padding: 15px;
+      color: #333;
+      font-size: 1.3rem;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+ /* Información superpuesta */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 128, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+     
+
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div>
+      <h1>Salvar a los Animales</h1>
+      <p>Un llamado urgente para proteger nuestra biodiversidad</p>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <section>
+    <h2>¿Por qué es importante salvar a los animales?</h2>
+    <p>
+      Los animales son fundamentales para el equilibrio ecológico. La desaparición de una especie puede desencadenar 
+      <span class="highlight">efectos devastadores</span> sobre otras especies y el medio ambiente. Las especies como los 
+      <span class="highlight">tigres</span>, <span class="highlight">elefantes</span> y <span class="highlight">abejas</span> desempeñan roles cruciales 
+      en la polinización, el control de plagas y la preservación de los ecosistemas.
+    </p>
+
+    <h2>Causas principales de las amenazas</h2>
+    <ul>
+      <li>Pérdida de hábitat debido a la urbanización y deforestación.</li>
+      <li>Cambio climático que altera los hábitats naturales.</li>
+      <li>Caza furtiva para el comercio de marfil, pieles y otras partes.</li>
+      <li>Contaminación que afecta tanto a especies terrestres como marinas.</li>
+      <li>Tráfico ilegal de especies exóticas.</li>
+    </ul>
+
+    <h2>Más razones para salvar a los animales</h2>
+    <ul>
+      <li><strong>Biodiversidad:</strong> La biodiversidad es esencial para la salud del planeta, ya que contribuye a la estabilidad de los ecosistemas y a la resiliencia ante desastres naturales.</li>
+      <li><strong>Impacto económico:</strong> La conservación de especies y ecosistemas tiene un impacto económico positivo, como el turismo de vida silvestre y el suministro de recursos naturales.</li>
+      <li><strong>Salud humana:</strong> La conservación de animales y ecosistemas puede prevenir enfermedades zoonóticas y mejorar la calidad del aire, el agua y los suelos.</li>
+      <li><strong>Cambio climático:</strong> El cambio climático está poniendo en riesgo la supervivencia de muchas especies, especialmente aquellas que ya viven en hábitats frágiles.</li>
+    </ul>
+
+    <h2>Especies en peligro de extinción</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://t2.ea.ltmcdn.com/es/posts/5/6/4/donde_viven_los_tigres_25465_orig.jpg" alt="Tigre">
+        <h3>Tigre</h3>
+        <div class="overlay">
+          <li>Nombre científico: Panthera tigris</li>
+          <li>Causas de extincion: perdida de habitat por deforestacion,
+            casa ilegal por sus pieles y huesos.</li>
+          <li>Población estimada: menos de 4,000 especies en libertad.</li>
+          <li>Habitat: bosques y selvas de Asia.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://th.bing.com/th/id/R.1abd58038e1fc70515d07785b9db5253?rik=ovqAkU2pL3Yn1Q&pid=ImgRaw&r=0" alt="Elefante">
+        <h3>Elefante</h3>
+        <div class="overlay">
+          <li>Nombre científico: Loxodonta africana</li>
+          <li>Causas de extincion: caza furtiva por el marfil de sus colmillos, perdida de habitat, conflictos con humanos ya que a veces invaden areas de cultivos</li>
+          <li>Población estimada: aproximadamente 415,000 individuos.</li>
+          <li>Habitat: principalmente en la sabana, bosques tropicales y sabanas abiertas en Africa.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://th.bing.com/th/id/OIP.tUjJXvB6Q7ynhHEXen_ZRwHaFA?rs=1&pid=ImgDetMain" alt="Tortuga Carey">
+        <h3>Tortuga Carey</h3>
+        <div class="overlay">
+          <li>Nombre científico: Eretmochelys imbricata.</li>
+          <li>Causas de extincion: Caza furtiva por sus escamas, destruccion de habitats de anidacion, Contaminacion marina.</li>
+          <li>Poblacion estimada: No se dispone de una cifra exacta , se estima que las poblaciones han disminuido significativamente.</li>
+          <li>Habitat: Vive principalmente en aguas tropicales y subtropicales de los oceanos atlantico, Pacifico e Indico. Se encuentra en corales y areas marinas pocas profundas.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://th.bing.com/th/id/R.bb52121577ee91dcb05083ce80bb141e?rik=jr1EUCl79AccYw&riu=http%3a%2f%2fawsassets.wwf.es%2fimg%2foriginal%2fmid_234785.jpg&ehk=FtgrrpqMTbCotKBVqoAnoePeiXTuJw%2bwYC0MKcCgWRQ%3d&risl=&pid=ImgRaw&r=0" alt="Oso Polar">
+        <h3>Oso Polar</h3>
+        <div class="overlay">
+          <li>Nombre científico: Ursus maritimus.</li>
+          <li>Causas de extincion: cambio climatico, perdida de habitat debido al derretimiento del hielo marino, contaminacion.</li>
+          <li>Poblacion estimada: la poblacion mundial de osos polares se estima entre 22,000 y 31,000 individuos.</li>
+          <li>Habitat: Habitan en el Artico, principalmente sobre el hielo marino flotante, donde cazan focas para alimentarse.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://files.worldwildlife.org/wwfcmsprod/images/African_White_Rhino_WW2131989/story_full_width/2k60kb74g3_African_White_Rhino_WW2131989.jpg" alt="Rinoceronte de Java">
+        <h3>Rinoceronte de Java</h3>
+        <div class="overlay">
+          <li>Nombre científico: Rhinoceros sondaicus.</li>
+          <li>Causas de extincion: caza furtiva para obtener sus cuernos, perdida de habitat, enfermedades  y problemas geneticos en algunas poblaciones de rinocerontes en cautiverios.</li>
+          <li>Poblacion estimada: Menos de 75 individuos, en peligro critico .</li>
+          <li>Habitat: habitan en bosques tropicales de Indonesia.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://diariosocialrd.com/wp-content/uploads/2019/07/Un-espacio-para-disfrutar-del-fascinante-mundo-de-las-abejas.jpg" alt="Abeja">
+        <h3>Abeja</h3>
+        <div class="overlay">
+          <li>Nombre científico: Apis mellifera.</li>
+          <li>Causas de extincion: Perdida de habitat, cambio climatico, enfermedades y parasitos.</li>
+          <li>Poblacion estimada: La poblacion esta disminuyendo rapidamente en todo el mundo, con algunas regiones registrando perdidas del 30-40% anual en colonias de abejas domesticas.</li>
+          <li>Habitat: Las abejas habitan en una amplia variedad de ecosistemas, como praderas, bosques y zonas agricolas. Las abejas domesticas suelen vivir en colmenas.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://nationalzoo.si.edu/sites/default/files/styles/max_2600x2600/public/newsroom/649a1243-cropped.jpg?itok=uMksZBI3" alt="Panda">
+        <h3>Panda Gigante</h3>
+        <div class="overlay">
+          <li>Nombre científico: Ailuropoda melanoleuca.</li>
+          <li>Causas de extincion: Perdida de habitat, baja tasa de reproduccion, cambio climatico.</li>
+          <li>Poblacion estimada: se estima que hay alrededor de 1,800 pandas gigantes viviendo en estado salvaje y mas de 300 en cautiverios.</li>
+          <li>Habitat: Habita en los bosques de bambu en regiones montañosas del sureste de China.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images5.alphacoders.com/349/thumb-1920-349895.jpg" alt="Orangután de Borneo">
+        <h3>Orangután de Borneo</h3>
+        <div class="overlay">
+          <li>Nombre científico: Pongo pygmaeus.</li>
+          <li>Causas de extincion: Perdida de habitat, caza furtiva y captura ilegal para el comercio de mascotas, incendios forestales.</li>
+          <li>Poblacion estimada: aproximadamente 104,700 individuos.</li>
+          <li>Habitat: Viven en los bosques tropicales de las islas de Borneo y Sumatra, en el sudeste asiatico.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://wallpaperaccess.com/full/334056.jpg" alt="Jaguar">
+        <h3>Jaguar</h3>
+        <div class="overlay">
+          <li>Nombre científico: Pantera Onca.</li>
+          <li>Causas de extincion: Perdida de habitat, caza furtiva por su piel, disminucion de presas.</li>
+          <li>Poblacion estimada: Se estima que quedan entre 15,000 y 64,000 jaguares en estado salvaje, con numeros decrecientes en muchas regiones de America Latina.</li>
+          <li>Habitat: Habita en bosques tropicales, pantanos, selvas densas y sabana. Su rango in cluye desde el sur de Estados Unidos hasta America del sur.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://elespecial.com/wp-content/uploads/2016/09/dreamstime_m_28076999-1024x683.jpg" alt="Chita">
+        <h3>Chita</h3>
+        <div class="overlay">
+          <li>Nombre científico: Acinonyx jubatus.</li>
+          <li>Causas de extincion: Perdida de habitat, caza furtiva para la venta de pieles y como mascotas exoticas, disminucion de presas.</li>
+          <li>Poblacion estimada: Se estima que hay menos de 7,000 chitas en estado salvaje, con la mayoria concentrada en el Africa subsahariada.</li>
+          <li>Habitat: Habitan en la sabana, praderas abiertas y regiones semiaridas.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://th.bing.com/th/id/OIP.nk5X8ZUOZjTU1QwTn4fwLgHaE7?rs=1&pid=ImgDetMain" alt="Koala">
+        <h3>Koala</h3>
+        <div class="overlay">
+          <li>Nombre científico: Phascolarctos cinereus.</li>
+          <li>Causas de extincion: Perdida de habitat, incendios forestales, cambio climatico, enfermedades como la clamidia.</li>
+          <li>Poblacion estimada: Se estima que quedan entre 40,000 y 80,000 koalas en estado salvaje, aunque las cifras varian segun las regiones.</li>
+          <li>Habitat: Habitan en bosques de eucalipto en Australia.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2019/10/13/20/28/gorilla-4547188_1280.jpg" alt="Gorila Occidental">
+        <h3>Gorila occidental</h3>
+        <div class="overlay">
+          <li>Nombre científico: Gorilla gorilla.</li>
+          <li>Causas de extincion: Caza furtiva, perdida de habitat, enfermedades como el ebola.</li>
+          <li>Poblacion estimada: Se estima que quedan menos de 316,000 individuos en la naturaleza.</li>
+          <li>Habitat: Habitan en bosques tropicales y subtropicales de Africa central y oriental.</li>
+        </div>
+      </div>
+       <div class="card">
+        <img src="https://noticiasncc.com/wp-content/uploads/2019/03/35639197465_aaed7cd5f3_o-1560x975.jpg" alt="Ballena Azul">
+        <h3>Ballena Azul</h3>
+        <div class="overlay">
+          <li>Nombre científico: Balaenoptera musculus.</li>
+          <li>Causas de extincion: Caza comercial, coliciones con embarcaciones, enredos en redes de pesca, contaminacion oceanica.</li>
+          <li>Poblacion estimada: Se calcula que quedan entre 10,000 y 25,000 ballenas azules en los oceanos.</li>
+          <li>Habitat: Habita en oceanos abiertos de todo el mundo, prefiriendo aguas frias y templadas.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://www.gaceta.unam.mx/wp-content/uploads/2021/05/210524-aca2-des-f1-vaquita-marina.jpg" alt="Vaquita Marina">
+        <h3>Vaquita Marina</h3>
+        <div class="overlay">
+          <li>Nombre científico: Phocoena sinus.</li>
+          <li>Causas de extincion: Caza furtiva, Perdida de habitat, baja poblacion, pesca incidental, quedan atrapados en redes de pesca ilegales.</li>
+          <li>Poblacion estimada: Se calcula que quedan menos de 10 individuos en estado salvaje, lo que la convierte en el mamifero marino mas amenazado del mundo.</li>
+          <li>Habitat: Habita exclusivamente en el norte del Golfo de California (Mexico) en aguas pocas profundas y turbias cercanas a la costa.</li>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://th.bing.com/th/id/OIP.nLcWZdQYNTk3S9yPsSUDuwHaE8?rs=1&pid=ImgDetMain" alt="Tiburon Ballena">
+        <h3>Tiburon Ballena</h3>
+        <div class="overlay">
+          <li>Nombre científico: Rhincodon typus.</li>
+          <li>Causas de extincion: Pesca excesiva y captura incidental en redes de pesca comercial, caza directa por su carne, aceite y aletas, contaminacion marina.</li>
+          <li>Poblacion estimada: Se desconoce una cifra exacta, pero se sabe que sus poblaciones han disminuido considerablemente en la ultimas decadas.</li>
+          <li>Habitat: Habita en mares tropicales y calidos alrededor del mundo, desde el Oceano Atlantico hasta el Pacifico y el Indico.</li>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Modal (ventana emergente con información de animales) -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="animal-title"></h2>
+    <p id="animal-info"></p>
+  </div>
+</div>
+ 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 - Salvar a los Animales. Todos los derechos reservados.</p>
+  </footer>  
+</body>
+</html>

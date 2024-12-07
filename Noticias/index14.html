@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Noticias sobre la conservación de animales, bosques y árboles en peligro de extinción.">
+    <title>Noticias Ambientales</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(45deg, #2e8b57, #145a32);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #2e8b57;
+        }
+
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-article {
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-article:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .news-article h3 {
+            color: #2e8b57;
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .news-article img {
+            width: 80%; /* Ajustado para imágenes más pequeñas */
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+        .news-article p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .news-article a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #2e8b57;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .news-article a:hover {
+            background-color: #145a32;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .news-article {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        footer p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Noticias Ambientales</h1>
+        <p>Las últimas noticias sobre conservación de animales, bosques y árboles en peligro de extinción.</p>
+    </header>
+    <nav>
+        <a href="#animales">Animales</a>
+        <a href="#bosques">Bosques</a>
+        <a href="#arboles">Árboles</a>
+    </nav>
+    <section id="animales">
+        <h2>Protección de Animales en Peligro</h2>
+        <div class="news-article">
+            <h3>Nutrias: Las Guardianas de los Ríos</h3>
+            <img src="https://www.informateymas.com/wp-content/uploads/2022/05/nutria-de-rio.jpg" alt="Nutria en su hábitat">
+            <p>Las nutrias son esenciales para el ecosistema de los ríos, pero están amenazadas por la contaminación y la pérdida de hábitat. Es urgente proteger sus hogares.</p>
+            <a href="https://www.worldwildlife.org" target="_blank">Leer más</a>
+        </div>
+        <div class="news-article">
+            <h3>Ocelotes: Felinos en Silencio</h3>
+            <img src="https://www.bunko.pet/__export/1676572948288/sites/debate/img/2023/02/16/ocelote_x2x.jpg_554688468.jpg" alt="Ocelote en un bosque tropical">
+            <p>Los ocelotes, pequeños felinos nativos de América Latina, enfrentan el peligro de extinción debido a la caza ilegal y la deforestación.</p>
+            <a href="https://www.conservation.org" target="_blank">Leer más</a>
+        </div>
+        <div class="news-article">
+            <h3>Perezosos: Luchadores del Tiempo</h3>
+            <img src="https://supercurioso.com/wp-content/uploads/2019/12/Curiosidades-del-perezoso-10-Datos-que-te-sorprenderan.jpg" alt="Perezoso en la selva">
+            <p>Los perezosos son símbolos de la biodiversidad de América Central. La pérdida de árboles impacta directamente sus vidas. Salvemos sus hogares.</p>
+            <a href="https://www.iucnredlist.org" target="_blank">Leer más</a>
+        </div>
+    </section>
+    <section id="bosques">
+        <h2>Preservación de Bosques</h2>
+        <div class="news-article">
+            <h3>Amazonas: El Pulmón del Planeta en Crisis</h3>
+            <img src="https://media.cntraveller.com/photos/611becca628f4910ed10222d/16:9/w_2560%2Cc_limit/gettyimages-1044285108.jpg" alt="Bosque del Amazonas">
+            <p>La deforestación en la Amazonia alcanzó niveles récord este año. Es crucial apoyar iniciativas que promuevan la reforestación y el desarrollo sostenible.</p>
+            <a href="https://www.rainforest-alliance.org" target="_blank">Leer más</a>
+        </div>
+        <div class="news-article">
+            <h3>La Importancia de los Manglares</h3>
+            <img src="https://dam.ngenespanol.com/wp-content/uploads/2019/08/manglares-importancia.jpg" alt="Manglares">
+            <p>Los manglares no solo son refugio de muchas especies, sino que también protegen las costas de la erosión. Su conservación es vital para el equilibrio ecológico.</p>
+            <a href="https://www.conservation.org" target="_blank">Leer más</a>
+        </div>
+    </section>
+    <section id="arboles">
+        <h2>Árboles en Peligro de Extinción</h2>
+        <div class="news-article">
+            <h3>Baobab: Monumentos Naturales en Declive</h3>
+            <img src="https://wallsdesk.com/wp-content/uploads/2018/04/Baobab-full-HD.jpg" alt="Baobab">
+            <p>Los baobabs, árboles icónicos de África, están muriendo a un ritmo alarmante debido al cambio climático y la actividad humana.</p>
+            <a href="https://www.iucnredlist.org" target="_blank">Leer más</a>
+        </div>
+        <div class="news-article">
+            <h3>Encinos Milenarios en Riesgo</h3>
+            <img src="https://th.bing.com/th/id/R.356512733462a45d1414b4d902f30297?rik=VJ3GhmHs2LCi3g&riu=http%3a%2f%2fmexicolindoyquerido.com.mx%2fmexico2%2fimages%2fIMAGENES_PARA_TEMPLATE%2fflora_y_fauna_mexicana%2fP23_encino_mexicano.png&ehk=4TLnKfdTYNjWH68%2fFgDPJ99LxVuO7n6YrY4v%2bx4Gqlg%3d&risl=&pid=ImgRaw&r=0" alt="Encinos">
+            <p>El sobrepastoreo y la urbanización están afectando las poblaciones de encinos, fundamentales para muchos ecosistemas.</p>
+            <a href="https://www.treevitalize.net" target="_blank">Leer más</a>
+        </div>
+        <div class="news-article">
+            <h3>Álamo Blanco: Un Gigante que Desaparece</h3>
+            <img src="https://plantasyflores.pro/wp-content/uploads/2019/06/%C3%81rbol-de-%C3%81lamo-blanco.gif" alt="Álamo Blanco">
+            <p>El álamo blanco, vital para los ecosistemas ribereños, está en peligro debido a la tala indiscriminada y el cambio climático.</p>
+            <a href="https://standfortrees.org/" target="_blank">Leer más</a>
+        </div>
+        <div class="news-article">
+            <h3>Secuoyas: Los Colosos de la Tierra en Peligro</h3>
+            <img src="https://miviaje.com/wp-content/uploads/2022/02/parque-nacional-secuoyas-gigantes-1536x1025.jpg" alt="Secuoya">
+            <p>Las secuoyas, algunos de los árboles más grandes del mundo, enfrentan amenazas por la tala y el cambio climático, lo que pone en peligro su existencia.</p>
+            <a href="https://naturalresources.house.gov/legislative-priorities/sequoias.htm" target="_blank">Leer más</a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Noticias Ambientales. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

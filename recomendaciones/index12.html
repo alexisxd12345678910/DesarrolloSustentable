@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvar Animales y Bosques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+        }
+        header {
+            background-color: #388e3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .proyecto {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .proyecto img {
+            max-width: 120px;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .proyecto-content {
+            flex-grow: 1;
+        }
+        .proyecto h3 {
+            color: #2e7d32;
+            margin: 0;
+        }
+        .proyecto p {
+            margin: 10px 0;
+        }
+        .estado {
+            font-weight: bold;
+        }
+        .estado.bien {
+            color: green;
+        }
+        .estado.mal {
+            color: red;
+        }
+        .botones {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2e7d32;
+        }
+        a {
+            color: #388e3c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 0rem;
+            background-color: #388e3c;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function marcarFavorito(nombreProyecto) {
+            alert(`¡Has marcado como favorito: ${nombreProyecto}!`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Proyectos para Salvar Animales y Bosques</h1>
+        <p>Revisión de iniciativas para proteger la biodiversidad y la naturaleza</p>
+    </header>
+    <main>
+        <h2>Salvar Animales</h2>
+        <div class="proyecto">
+            <img src="https://th.bing.com/th/id/R.c133794a769c517edc867c6cf45f7f0e?rik=0vm89vcKKBIDbg&pid=ImgRaw&r=0" alt="Tigre de Bengala">
+            <div class="proyecto-content">
+                <h3>Protección del Tigre de Bengala</h3>
+                <p>Proyecto enfocado en preservar el hábitat natural del tigre de Bengala en India y evitar su caza furtiva.</p>
+                <p class="estado bien">Estado: Funciona bien</p>
+                <div class="botones">
+                    <button onclick="marcarFavorito('Protección del Tigre de Bengala')">Marcar como favorito</button>
+                    <a href="https://www.worldwildlife.org/species/tiger" target="_blank">Más información</a>
+                </div>
+            </div>
+        </div>
+        <div class="proyecto">
+            <img src="https://th.bing.com/th/id/OIP._40ZlNqLWt41wAqe5EVB_AHaHa?rs=1&pid=ImgDetMain" alt="Tortugas marinas">
+            <div class="proyecto-content">
+                <h3>Rescate de Tortugas Marinas</h3>
+                <p>Iniciativa que protege nidos de tortugas en playas vulnerables y educa a las comunidades locales.</p>
+                <p class="estado bien">Estado: Resultados positivos</p>
+                <div class="botones">
+                    <button onclick="marcarFavorito('Rescate de Tortugas Marinas')">Marcar como favorito</button>
+                    <a href="https://www.seeturtles.org/" target="_blank">Más información</a>
+                </div>
+            </div>
+        </div>
+
+        <h2>Salvar Bosques y Árboles</h2>
+        <div class="proyecto">
+            <img src="https://thumbs.dreamstime.com/b/bosque-reflejado-en-una-laguna-en-el-amazonas-12830059.jpg" alt="Amazonas">
+            <div class="proyecto-content">
+                <h3>Conservación del Amazonas</h3>
+                <p>Proyecto que combate la deforestación ilegal y promueve la reforestación en el Amazonas.</p>
+                <p class="estado mal">Estado: Problemas por falta de recursos</p>
+                <div class="botones">
+                    <button onclick="marcarFavorito('Conservación del Amazonas')">Marcar como favorito</button>
+                    <a href="https://www.amazonteam.org/" target="_blank">Más información</a>
+                </div>
+            </div>
+        </div>
+        <div class="proyecto">
+            <img src="https://www.ile-evasion.com/img/wysiwyg/Adansonia_grandidieri.jpg" alt="Baobabs en Madagascar">
+            <div class="proyecto-content">
+                <h3>Protección de los Baobabs en Madagascar</h3>
+                <p>Programa para proteger los emblemáticos baobabs, que están en peligro debido al cambio climático.</p>
+                <p class="estado bien">Estado: Avances significativos</p>
+                <div class="botones">
+                    <button onclick="marcarFavorito('Protección de los Baobabs en Madagascar')">Marcar como favorito</button>
+                    <a href="https://www.baobabproject.org/" target="_blank">Más información</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Creado por Alexis Pech, Juan Chuc, Erubiel Flota, Angel Chi</p>
+    </footer>
+</body>
+</html>

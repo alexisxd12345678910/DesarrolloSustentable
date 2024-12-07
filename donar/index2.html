@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donaciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+    .container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      text-align: center;
+    }
+    select, input[type="number"] {
+      width: 80%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .response {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Haz una Donación</h1>
+    <form id="donationForm">
+      <!-- Selección de tarjeta -->
+      <label for="account">Selecciona una tarjeta:</label><br>
+      <select id="account" name="account">
+        <option value="" disabled selected>-- Selecciona una tarjeta --</option>
+        <option value="5701-8441-7009-1234">BBVA: 5701-8441-7009-1234</option>
+        <option value="4580-5091-1143-5678">Santander: 4580-5091-1143-5678</option>
+        <option value="2325-8102-6701-9101">HSBC: 2325-8102-6701-9101</option>
+      </select><br>
+
+      <!-- Selección de cantidad sugerida -->
+      <label for="suggestedAmount">Selecciona una cantidad sugerida:</label><br>
+      <select id="suggestedAmount" name="suggestedAmount" onchange="clearCustomAmount()">
+        <option value="" disabled selected>-- Selecciona una cantidad --</option>
+        <option value="10">10 pesos</option>
+        <option value="20">20 pesos</option>
+        <option value="1000">1000 pesos</option>
+        <option value="5000">5000 pesos</option>
+        <option value="10000">10000 pesos</option>
+      </select><br>
+
+      <!-- Cantidad personalizada -->
+      <label for="customAmount">O ingresa tu propia cantidad:</label><br>
+      <input type="number" id="customAmount" name="customAmount" placeholder="Ingresa un monto personalizado" min="1" onchange="clearSuggestedAmount()"><br>
+      
+      <button type="button" onclick="simulateDonation()">Donar</button>
+    </form>
+    <p id="response" class="response"></p>
+  </div>
+
+  <script>
+    // Limpiar la cantidad personalizada si se selecciona una cantidad sugerida
+    function clearCustomAmount() {
+      document.getElementById('customAmount').value = '';
+    }
+
+    // Limpiar la cantidad sugerida si se ingresa una cantidad personalizada
+    function clearSuggestedAmount() {
+      document.getElementById('suggestedAmount').value = '';
+    }
+
+    // Simular la donación
+    function simulateDonation() {
+      const account = document.getElementById('account').value;
+      const suggestedAmount = document.getElementById('suggestedAmount').value;
+      const customAmount = document.getElementById('customAmount').value;
+      const amount = customAmount || suggestedAmount; // Usar cantidad personalizada o sugerida
+
+      if (account && amount > 0) {
+        const responseMessage = `¡Gracias por tu donación de $${amount} a la tarjeta ${account}! Tu apoyo es importante.`;
+        document.getElementById('response').innerText = responseMessage;
+      } else {
+        document.getElementById('response').innerText = 'Por favor, selecciona una tarjeta y/o ingresa una cantidad válida.';
+      }
+    }
+  </script>
+</body>
+</html>

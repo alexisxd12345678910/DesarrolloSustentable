@@ -1,0 +1,277 @@
+    
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f5f1;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #228B22;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+    color: #fff;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 10px; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.navbar li {
+    list-style: none;
+
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+
+}
+
+.navbar a:hover {
+    color: #c1ffc1;
+    border-bottom: 2px solid #c1ffc1;
+}
+
+/* Header Section */
+.header-content {
+    background: url('https://www.caracteristicasdel.com/wp-content/uploads/2020/03/bosque.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid #228B22;
+
+}
+
+.animated-title {
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: slideIn 2s ease-out forwards;
+    opacity: 0;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Main Sections */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.section h2::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: #228B22;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.content img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content img:hover {
+    transform: scale(1.05);
+}
+
+ul {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #228B22;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Trees Section */
+.trees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tree-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tree-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tree-image {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tree-card:hover .tree-image {
+    transform: scale(1.1);
+}
+
+.tree-card h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #228B22;
+}
+
+.tree-card p {
+    color: #777;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background-color: #228B22;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Dark Backgrounds for some sections */
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.dark h2 {
+    color: #fff;
+}
+
+.dark ul {
+    padding: 0;
+    margin: 0;
+}
+
+.dark ul li {
+    font-size: 18px;
+    color: #fff;
+}
+
+.dark ul li:hover {
+    color: #c1ffc1;
+}
